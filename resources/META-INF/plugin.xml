@@ -1,0 +1,39 @@
+<idea-plugin>
+  <id>com.flageolett.nodeconfig</id>
+  <name>NodeConfig</name>
+  <version>1.0</version>
+  <vendor email="henning.kvinnesland@gmail.com" url="http://www.yourcompany.com">YourCompany</vendor>
+
+  <description><![CDATA[
+      Adds Support for code-completion and goto for js/json config-files.
+    ]]></description>
+
+  <change-notes><![CDATA[
+    <h2>1.0.0</h2>
+    <ul>
+      <li>Change must come from within.</li>
+    </ul>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="173.0"/>
+
+  <depends>JavaScript</depends>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <psi.referenceContributor language="JavaScript" implementation="Json.ConfigAttributeReferenceProvider" order="first" />
+    <completion.contributor language="JavaScript" implementationClass="Json.ImportCompletionContributor" order="first" />
+    <gotoDeclarationHandler implementation="Js.GotoConfigFile" order="first" />
+    <gotoDeclarationHandler implementation="Json.GotoConfigProperty" order="first" />
+  </extensions>
+
+  <extensions defaultExtensionNs="JavaScript">
+    <moduleReferenceContributor implementation="Js.ConfigModuleReferenceContributor" order="first" />
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+  </actions>
+
+</idea-plugin>
