@@ -9,7 +9,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-public class ConfigAttributeReference extends PsiReferenceBase<PsiElement> implements PsiPolyVariantReference
+class ConfigAttributeReference extends PsiReferenceBase<PsiElement> implements PsiPolyVariantReference
 {
     ConfigAttributeReference(@NotNull PsiElement element)
     {

@@ -12,11 +12,14 @@ Supported products
 Know issues
 -----------
     It is not possible to provide references for imported config-properties.
-    This causes json-properties to be marked as unresolved.    
+    This causes json-properties to be marked as unresolved. 
+       
     Icons for goto-representation for config-attributes disappears.
+    Code-completion suggests key-names which are not valid identifiers.
 
 Roadmap
 -------
+    More tests!
     Add json-support for find usages/rename refactoring.
     Add replacement-inspection for imported properties.
     Add support for alternate syntax: `config.get('api.basePath');` 

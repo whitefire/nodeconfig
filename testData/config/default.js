@@ -1,0 +1,12 @@
+module.exports = {
+    firstProperty: "firstValue",
+    secondProperty: "secondValue",
+    some: {
+        deeper: {
+            property: true
+        },
+        under: {
+            setting: false
+        }
+    }
+};

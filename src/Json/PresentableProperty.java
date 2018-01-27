@@ -5,7 +5,7 @@ import com.intellij.lang.ASTNode;
 import com.intellij.navigation.ItemPresentation;
 import org.jetbrains.annotations.Nullable;
 
-public class PresentableProperty extends JsonPropertyImpl
+class PresentableProperty extends JsonPropertyImpl
 {
     PresentableProperty(ASTNode node)
     {

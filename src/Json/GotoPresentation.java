@@ -6,9 +6,9 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
-public class GotoPresentation implements ItemPresentation
+class GotoPresentation implements ItemPresentation
 {
-    private PresentableProperty property;
+    private final PresentableProperty property;
 
     GotoPresentation(PresentableProperty property)
     {

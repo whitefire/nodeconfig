@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 
 public class ConfigReference extends PsiReferenceBase<PsiElement>
 {
-    protected PsiFile configFile;
+    protected final PsiFile configFile;
 
     public ConfigReference(@NotNull PsiElement element, PsiFile targetFile)
     {
@@ -24,10 +24,7 @@ public class ConfigReference extends PsiReferenceBase<PsiElement>
 
     @NotNull
     @Override
-    public Object[] getVariants()
-    {
-        return EMPTY_ARRAY;
-    }
+    public Object[] getVariants() { return EMPTY_ARRAY; }
 
     @Override
     public TextRange getRangeInElement()
