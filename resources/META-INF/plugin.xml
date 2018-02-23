@@ -7,6 +7,10 @@
     <description><![CDATA[Adds Support for code-completion and goto for js/json config-files.]]></description>
 
     <change-notes><![CDATA[
+        <h2>2.0.0</h2>
+            <ul>
+                <li>Move towards best-practices.</li>
+            </ul>
         <h2>1.0.1</h2>
         <ul>
             <li>Fixed duplicate js-completions when using multiple environments.</li>
@@ -24,17 +28,11 @@
     <depends>com.intellij.css</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <psi.referenceContributor language="JavaScript" implementation="Json.ConfigAttributeReferenceProvider" order="first"/>
-
-        <completion.contributor language="JavaScript" implementationClass="Json.ImportCompletionContributor" order="first"/>
-        <completion.contributor language="JavaScript" implementationClass="Js.ImportCompletionContributor" order="first"/>
-
-        <gotoDeclarationHandler implementation="Js.GotoConfigFile" order="first"/>
-        <gotoDeclarationHandler implementation="Json.GotoConfigProperty" order="first"/>
+        <completion.contributor implementationClass="NodeConfig.ConfigCompletionContributor" language="JavaScript" order="first" />
     </extensions>
 
     <extensions defaultExtensionNs="JavaScript">
-        <moduleReferenceContributor implementation="Js.ConfigModuleReferenceContributor" order="first"/>
+        <!--<moduleReferenceContributor implementation="Js.ConfigModuleReferenceContributor" order="first"/>-->
     </extensions>
 
     <actions/>

@@ -4,6 +4,13 @@ NodeConfig Plugin
 Installation
 ------------
     Install as you would any JetBrains-plugin.
+    Make sure to add TypeScript-definitions for NodeConfig.
+
+Usage
+-----
+    Request completions within string literals when using the "get" or "has"
+    methods of the config-object. If you wish the regular-completions request
+    completions an additional time to get access to them.
 
 Supported products
 ------------------
@@ -11,17 +18,21 @@ Supported products
 
 Know issues
 -----------
-    It is not possible to provide references for imported config-properties.
-    This causes json-properties to be marked as unresolved. 
-       
-    Icons for goto-representation for config-attributes disappears.
-    Code-completion suggests key-names which are not valid identifiers.
+    
 
 Roadmap
 -------
+    add completion-confidence.
+    goto-implementations.
+    Tests.
+    Missing setting-inspection.
+        - Add setting quickfix.
+    Improve completion-ux.
+    Add json-support.
+    Add inspection encouraging people to use best-practices.
     More tests!
-    Add json-support for find usages/rename refactoring.
+    Add support for find usages/rename refactoring.
     Add replacement-inspection for imported properties.
-    Add support for alternate syntax: `config.get('api.basePath');` 
+    Add support for correct syntax: `config.get('api.basePath');` 
     
     Suggestions?
