@@ -1,14 +1,16 @@
-package NodeConfig;
+package NodeConfig.ConfigParser;
 
+import com.intellij.codeInsight.lookup.LookupElement;
+import com.intellij.codeInsight.lookup.LookupElementBuilder;
 import com.intellij.lang.javascript.psi.JSProperty;
 import com.intellij.lang.javascript.psi.JSRecursiveWalkingElementVisitor;
-import java.util.HashMap;
+import java.util.HashSet;
 
 public class JsPropertyWalker extends JSRecursiveWalkingElementVisitor
 {
-    private HashMap<String, String> completions = new HashMap<>();
+    private HashSet<LookupElement> completions = new HashSet<>();
 
-    public HashMap<String, String> getCompletions() { return completions; }
+    public HashSet<LookupElement> getCompletions() { return completions; }
 
     @Override
     public void visitJSProperty(JSProperty node)
@@ -34,6 +36,6 @@ public class JsPropertyWalker extends JSRecursiveWalkingElementVisitor
             return;
         }
 
-        completions.put(qualifiedName, "");
+        completions.add(LookupElementBuilder.create(qualifiedName));
     }
 }

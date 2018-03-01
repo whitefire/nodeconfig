@@ -1,19 +1,17 @@
-package NodeConfig;
+package NodeConfig.ConfigParser;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiManager;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Objects;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class ConfigUtilities
 {
-    static List<PsiFile> getConfigFiles(Project project, String extension)
+    public static List<PsiFile> getConfigFiles(Project project, String extension)
     {
         VirtualFile[] sourceRoots = ProjectRootManager
             .getInstance(project)

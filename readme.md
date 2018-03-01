@@ -8,8 +8,9 @@ Installation
 
 Usage
 -----
+    Enable the @types/config TypeScript library.
     Request completions within string literals when using the "get" or "has"
-    methods of the config-object. If you wish the regular-completions request
+    methods of the config-object. If you wish the regular-completions, request
     completions an additional time to get access to them.
 
 Supported products
@@ -21,14 +22,14 @@ Know issues
     
 
 Roadmap
--------
+-------    
+    Improve completion-ux.
     add completion-confidence.
+    Auto-enable/download typescript-library.
     goto-implementations.
     Tests.
     Missing setting-inspection.
         - Add setting quickfix.
-    Improve completion-ux.
-    Add json-support.
     Add inspection encouraging people to use best-practices.
     More tests!
     Add support for find usages/rename refactoring.
