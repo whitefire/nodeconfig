@@ -17,23 +17,24 @@ Supported products
 ------------------
     IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland and Rider.
 
-Know issues
------------
-    
+Todo this version
+------------    
+    Tests.
 
 Roadmap
 -------    
     Improve completion-ux.
+        - Requesting completions after a period yields irrelevant results.
     add completion-confidence.
+        - Auto-popup that bad-boy!
     Auto-enable/download typescript-library.
     goto-implementations.
-    Tests.
+        - js seems to work for no reason.
+            - json not so much.     
     Missing setting-inspection.
         - Add setting quickfix.
-    Add inspection encouraging people to use best-practices.
-    More tests!
+       
     Add support for find usages/rename refactoring.
-    Add replacement-inspection for imported properties.
-    Add support for correct syntax: `config.get('api.basePath');` 
-    
+    Add replacement-quickfix for imported properties.
+       
     Suggestions?

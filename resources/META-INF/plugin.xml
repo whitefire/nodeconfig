@@ -1,7 +1,7 @@
 <idea-plugin>
     <id>com.flageolett.nodeconfig</id>
     <name>NodeConfig</name>
-    <version>1.0.1</version>
+    <version>2.0.0</version>
     <vendor email="henning.kvinnesland@gmail.com" url="https://github.com/whitefire/nodeconfig">Flageolett</vendor>
 
     <description><![CDATA[Adds Support for code-completion and goto for js/json config-files.]]></description>
@@ -29,12 +29,9 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <completion.contributor implementationClass="NodeConfig.ConfigCompletionContributor" language="JavaScript" order="first" />
+        <inspectionToolProvider implementation="NodeConfig.Inspections.ConfigInspectionProvider" />
     </extensions>
 
-    <extensions defaultExtensionNs="JavaScript">
-        <!--<moduleReferenceContributor implementation="Js.ConfigModuleReferenceContributor" order="first"/>-->
-    </extensions>
-
-    <actions/>
+    <actions />
 
 </idea-plugin>
