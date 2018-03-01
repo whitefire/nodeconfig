@@ -11,7 +11,7 @@ import java.util.*;
 public class ImportInspector extends JSRecursiveWalkingElementVisitor
 {
     private ProblemsHolder holder;
-    private HashSet<String> done;
+    private HashSet<ES6ImportDeclaration> done;
 
     ImportInspector(ProblemsHolder holder)
     {
@@ -24,14 +24,12 @@ public class ImportInspector extends JSRecursiveWalkingElementVisitor
     {
         super.visitES6ImportDeclaration(importDeclaration);
 
-        String importDeclarationText = importDeclaration.getText();
-
-        if (done.contains(importDeclarationText))
+        if (done.contains(importDeclaration))
         {
             return;
         }
 
-        done.add(importDeclarationText);
+        done.add(importDeclaration);
 
         String fromClauseText = Optional
             .ofNullable(importDeclaration.getFromClause())
