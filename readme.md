@@ -19,12 +19,12 @@ Supported products
 
 Todo this version
 ------------    
-    Tests.
-
-Roadmap
--------    
     Improve completion-ux.
         - Requesting completions after a period yields irrelevant results.
+    
+Roadmap
+-------    
+    Make tests run faster.  
     add completion-confidence.
         - Auto-popup that bad-boy!
     Auto-enable/download typescript-library.

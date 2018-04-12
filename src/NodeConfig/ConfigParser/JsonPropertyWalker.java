@@ -14,7 +14,7 @@ public class JsonPropertyWalker extends JsonRecursiveElementVisitor
 {
     private HashSet<LookupElement> completions = new HashSet<>();
 
-    public HashSet<LookupElement> getCompletions() { return completions; }
+    HashSet<LookupElement> getCompletions() { return completions; }
 
     @Override
     public void visitProperty(@NotNull JsonProperty property)
