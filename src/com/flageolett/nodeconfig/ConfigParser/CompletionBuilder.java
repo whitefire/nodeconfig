@@ -1,4 +1,4 @@
-package NodeConfig.ConfigParser;
+package com.flageolett.nodeconfig.ConfigParser;
 
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.openapi.vfs.VirtualFile;

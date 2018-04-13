@@ -19,11 +19,15 @@ Supported products
 
 Todo this version
 ------------    
-    Improve completion-ux.
-        - Requesting completions after a period yields irrelevant results.
+    Make test-data-path relative or infer absolute path.
+    Make sure plugin is unintrusive.
+        - Should not interfere in any way unless the typescript-library is installed.    
+    Test the negatives.   
     
 Roadmap
 -------    
+    Improve completion-ux.
+        - Requesting completions after a period yields irrelevant results.
     Make tests run faster.  
     add completion-confidence.
         - Auto-popup that bad-boy!

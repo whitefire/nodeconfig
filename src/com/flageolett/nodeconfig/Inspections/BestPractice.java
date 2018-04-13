@@ -1,4 +1,4 @@
-package NodeConfig.Inspections;
+package com.flageolett.nodeconfig.Inspections;
 
 import com.intellij.codeInspection.LocalInspectionToolSession;
 import com.intellij.codeInspection.ProblemsHolder;
@@ -7,11 +7,12 @@ import com.intellij.psi.PsiElementVisitor;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 
-public class BestPractice extends JSInspection
+class BestPractice extends JSInspection
 {
+
     @NotNull
     @Override
-    protected PsiElementVisitor createVisitor(ProblemsHolder problemsHolder, LocalInspectionToolSession localInspectionToolSession)
+    protected PsiElementVisitor createVisitor(@NotNull ProblemsHolder problemsHolder, @NotNull LocalInspectionToolSession localInspectionToolSession)
     {
         return new ImportInspector(problemsHolder);
     }

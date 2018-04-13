@@ -1,4 +1,4 @@
-package NodeConfig.ConfigParser;
+package com.flageolett.nodeconfig.ConfigParser;
 
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
@@ -6,11 +6,11 @@ import com.intellij.lang.javascript.psi.JSProperty;
 import com.intellij.lang.javascript.psi.JSRecursiveWalkingElementVisitor;
 import java.util.HashSet;
 
-public class JsPropertyWalker extends JSRecursiveWalkingElementVisitor
+class JsPropertyWalker extends JSRecursiveWalkingElementVisitor
 {
-    private HashSet<LookupElement> completions = new HashSet<>();
+    private final HashSet<LookupElement> completions = new HashSet<>();
 
-    public HashSet<LookupElement> getCompletions() { return completions; }
+    HashSet<LookupElement> getCompletions() { return completions; }
 
     @Override
     public void visitJSProperty(JSProperty node)

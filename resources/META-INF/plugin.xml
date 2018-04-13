@@ -28,8 +28,8 @@
     <depends>com.intellij.css</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <completion.contributor implementationClass="NodeConfig.ConfigCompletionContributor" language="JavaScript" order="first" />
-        <inspectionToolProvider implementation="NodeConfig.Inspections.ConfigInspectionProvider" />
+        <completion.contributor implementationClass="com.flageolett.nodeconfig.ConfigCompletionContributor" language="JavaScript" order="first" />
+        <inspectionToolProvider implementation="com.flageolett.nodeconfig.Inspections.ConfigInspectionProvider" />
     </extensions>
 
     <actions />

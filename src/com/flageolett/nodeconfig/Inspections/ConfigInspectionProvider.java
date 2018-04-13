@@ -1,4 +1,4 @@
-package NodeConfig.Inspections;
+package com.flageolett.nodeconfig.Inspections;
 
 import com.intellij.codeInspection.InspectionToolProvider;
 import org.jetbrains.annotations.NotNull;

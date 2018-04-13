@@ -1,17 +1,19 @@
-package NodeConfig.Inspections;
+package com.flageolett.nodeconfig.Inspections;
 
 import com.intellij.codeInspection.ProblemsHolder;
 import com.intellij.lang.ecmascript6.psi.ES6FromClause;
 import com.intellij.lang.ecmascript6.psi.ES6ImportDeclaration;
-import com.intellij.lang.javascript.psi.JSRecursiveWalkingElementVisitor;
+import com.intellij.lang.javascript.psi.JSElementVisitor;
 import com.intellij.openapi.util.text.StringUtil;
 
 import java.util.*;
 
-public class ImportInspector extends JSRecursiveWalkingElementVisitor
+class ImportInspector extends JSElementVisitor
 {
-    private ProblemsHolder holder;
-    private HashSet<ES6ImportDeclaration> done;
+    static final String PROBLEM_DESCRIPTION = "Use has/get-methods instead.";
+
+    private final ProblemsHolder holder;
+    private final HashSet<ES6ImportDeclaration> done;
 
     ImportInspector(ProblemsHolder holder)
     {
@@ -52,6 +54,6 @@ public class ImportInspector extends JSRecursiveWalkingElementVisitor
         }
 
         // Houston we have a problem.
-        holder.registerProblem(importDeclaration, "Use has/get-methods instead.");
+        holder.registerProblem(importDeclaration, PROBLEM_DESCRIPTION);
     }
 }

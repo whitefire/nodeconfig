@@ -1,4 +1,4 @@
-package NodeConfig.ConfigParser;
+package com.flageolett.nodeconfig.ConfigParser;
 
 import com.intellij.codeInsight.lookup.LookupElement;
 import com.intellij.codeInsight.lookup.LookupElementBuilder;
@@ -10,9 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class JsonPropertyWalker extends JsonRecursiveElementVisitor
+class JsonPropertyWalker extends JsonRecursiveElementVisitor
 {
-    private HashSet<LookupElement> completions = new HashSet<>();
+    private final HashSet<LookupElement> completions = new HashSet<>();
 
     HashSet<LookupElement> getCompletions() { return completions; }
 

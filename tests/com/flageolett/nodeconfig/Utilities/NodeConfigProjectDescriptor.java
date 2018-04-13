@@ -1,4 +1,4 @@
-package src;
+package com.flageolett.nodeconfig.Utilities;
 
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
@@ -26,7 +26,7 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
-public class ProjectDescriptor extends LightProjectDescriptor
+class NodeConfigProjectDescriptor extends LightProjectDescriptor
 {
     @Override
     public void setUpProject(@NotNull Project project, @NotNull SetupHandler handler) throws Exception

@@ -1,7 +1,7 @@
-package NodeConfig;
+package com.flageolett.nodeconfig;
 
-import NodeConfig.ConfigParser.CompletionBuilder;
-import NodeConfig.ConfigParser.ConfigUtilities;
+import com.flageolett.nodeconfig.ConfigParser.CompletionBuilder;
+import com.flageolett.nodeconfig.ConfigParser.ConfigUtilities;
 import com.intellij.codeInsight.completion.CompletionContributor;
 import com.intellij.codeInsight.completion.CompletionParameters;
 import com.intellij.codeInsight.completion.CompletionResultSet;
