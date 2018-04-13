@@ -8,10 +8,21 @@ import com.intellij.psi.PsiManager;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class ConfigUtilities
 {
-    public static List<PsiFile> getConfigFiles(Project project, String extension)
+    public static List<PsiFile> getConfigFiles(Project project)
+    {
+        List<PsiFile> jsConfigFiles = getConfigFiles(project, "js");
+        List<PsiFile> jsonConfigFiles = getConfigFiles(project, "json");
+
+        return Stream
+            .concat(jsConfigFiles.stream(), jsonConfigFiles.stream())
+            .collect(Collectors.toList());
+    }
+
+    private static List<PsiFile> getConfigFiles(Project project, String extension)
     {
         VirtualFile[] sourceRoots = ProjectRootManager
             .getInstance(project)

@@ -18,16 +18,14 @@ Supported products
     IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland and Rider.
 
 Todo this version
-------------        
-    Make sure plugin is unintrusive.
-        - Should not interfere in any way unless the typescript-library is installed.    
+------------                
     Test the negatives.   
     
 Roadmap
--------    
+-------
+    Setup CI/build.   
     Improve completion-ux.
-        - Requesting completions after a period yields irrelevant results.
-    Make tests run faster.  
+        - Requesting completions after a period yields irrelevant results.    
     add completion-confidence.
         - Auto-popup that bad-boy!
     Auto-enable/download typescript-library.
@@ -35,8 +33,7 @@ Roadmap
         - js seems to work for no reason.
             - json not so much.     
     Missing setting-inspection.
-        - Add setting quickfix.
-       
+        - Add setting quickfix.       
     Add support for find usages/rename refactoring.
     Add replacement-quickfix for imported properties.
        

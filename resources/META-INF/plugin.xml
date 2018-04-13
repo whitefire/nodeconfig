@@ -10,6 +10,7 @@
         <h2>2.0.0</h2>
             <ul>
                 <li>Move towards best-practices.</li>
+                <li>Make plugin unobtrusive.</li>
             </ul>
         <h2>1.0.1</h2>
         <ul>
@@ -28,6 +29,7 @@
     <depends>com.intellij.css</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.flageolett.nodeconfig.Utilities.TypeScriptStubLibrary" />
         <completion.contributor implementationClass="com.flageolett.nodeconfig.ConfigCompletionContributor" language="JavaScript" order="first" />
         <inspectionToolProvider implementation="com.flageolett.nodeconfig.Inspections.ConfigInspectionProvider" />
     </extensions>

@@ -56,7 +56,7 @@ class NodeConfigProjectDescriptor extends LightProjectDescriptor
             return;
         }
 
-        List<String> args = ContainerUtil.newArrayList(NodeCommandLineUtil.getInstallPackageCommand(interpreter), getNameForLibrary(description));
+        List<String> args = ContainerUtil.newArrayList(NodeCommandLineUtil.getInstallPackageCommand(interpreter), TypeScriptStubLibrary.getNameForLibrary(description));
         Collections.addAll(args, "--ignore-scripts".split(" +"));
 
         try
@@ -72,12 +72,12 @@ class NodeConfigProjectDescriptor extends LightProjectDescriptor
         updateLibraries(project, description);
     }
 
-    private void updateLibraries(Project project, DownloadableFileSetDescription description)
+    private static void updateLibraries(Project project, DownloadableFileSetDescription description)
     {
         ApplicationManager
             .getApplication()
             .runWriteAction(() -> {
-                String libraryName = getNameForLibrary(description);
+                String libraryName = TypeScriptStubLibrary.getNameForLibrary(description);
                 JSLibraryManager libraryManager = JSLibraryManager.getInstance(project);
                 libraryManager.createLibrary(libraryName, VirtualFile.EMPTY_ARRAY, VirtualFile.EMPTY_ARRAY, ArrayUtil.EMPTY_STRING_ARRAY, ScriptingLibraryModel.LibraryLevel.GLOBAL, true);
                 libraryManager.commitChanges();
@@ -86,9 +86,5 @@ class NodeConfigProjectDescriptor extends LightProjectDescriptor
             });
     }
 
-    private String getNameForLibrary(DownloadableFileSetDescription description)
-    {
-        return description.getVersionString() + "/" + description.getName();
-    }
 }
 

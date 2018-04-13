@@ -1,5 +1,6 @@
 package com.flageolett.nodeconfig.Inspections;
 
+import com.flageolett.nodeconfig.Utilities.TypeScriptStubLibrary;
 import com.intellij.codeInspection.ProblemsHolder;
 import com.intellij.lang.ecmascript6.psi.ES6FromClause;
 import com.intellij.lang.ecmascript6.psi.ES6ImportDeclaration;
@@ -24,6 +25,11 @@ class ImportInspector extends JSElementVisitor
     @Override
     public void visitES6ImportDeclaration(ES6ImportDeclaration importDeclaration)
     {
+        if (!TypeScriptStubLibrary.PLUGIN_ENABLED)
+        {
+            return;
+        }
+
         super.visitES6ImportDeclaration(importDeclaration);
 
         if (done.contains(importDeclaration))

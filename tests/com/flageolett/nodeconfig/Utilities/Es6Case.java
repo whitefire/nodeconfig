@@ -19,6 +19,9 @@ abstract public class Es6Case extends LightCodeInsightFixtureTestCase
         JSRootConfiguration
             .getInstance(project)
             .storeLanguageLevelAndUpdateCaches(JSLanguageLevel.JSX);
+
+        // Enable plugin before tests are run.
+        TypeScriptStubLibrary.PLUGIN_ENABLED = true;
     }
 
     @Override

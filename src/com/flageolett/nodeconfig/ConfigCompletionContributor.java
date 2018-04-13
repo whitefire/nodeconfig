@@ -2,6 +2,7 @@ package com.flageolett.nodeconfig;
 
 import com.flageolett.nodeconfig.ConfigParser.CompletionBuilder;
 import com.flageolett.nodeconfig.ConfigParser.ConfigUtilities;
+import com.flageolett.nodeconfig.Utilities.TypeScriptStubLibrary;
 import com.intellij.codeInsight.completion.CompletionContributor;
 import com.intellij.codeInsight.completion.CompletionParameters;
 import com.intellij.codeInsight.completion.CompletionResultSet;
@@ -10,14 +11,11 @@ import com.intellij.lang.javascript.psi.JSLiteralExpression;
 import com.intellij.lang.javascript.psi.ecma6.TypeScriptFunctionSignature;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiReference;
 import com.intellij.psi.util.PsiTreeUtil;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 public class ConfigCompletionContributor extends CompletionContributor
 {
@@ -46,6 +44,11 @@ public class ConfigCompletionContributor extends CompletionContributor
     @Override
     public void fillCompletionVariants(@NotNull CompletionParameters parameters, @NotNull CompletionResultSet result)
     {
+        if (!TypeScriptStubLibrary.PLUGIN_ENABLED)
+        {
+            return;
+        }
+
         // User requested regular completions, don't interfere!
         if (parameters.isExtendedCompletion())
         {
@@ -62,11 +65,9 @@ public class ConfigCompletionContributor extends CompletionContributor
         // We are in the right spot, only display config-completions.
         result.stopHere();
 
-        List<PsiFile> jsConfigFiles = ConfigUtilities.getConfigFiles(currentElement.getProject(), "js");
-        List<PsiFile> jsonConfigFiles = ConfigUtilities.getConfigFiles(currentElement.getProject(), "json");
-
-        Stream
-            .concat(jsConfigFiles.stream(), jsonConfigFiles.stream())
+        ConfigUtilities
+            .getConfigFiles(currentElement.getProject())
+            .stream()
             .map(CompletionBuilder::getCompletions)
             .forEach(result::addAllElements);
     }
