@@ -14,12 +14,10 @@ class ImportInspector extends JSElementVisitor
     static final String PROBLEM_DESCRIPTION = "Use has/get-methods instead.";
 
     private final ProblemsHolder holder;
-    private final HashSet<ES6ImportDeclaration> done;
 
     ImportInspector(ProblemsHolder holder)
     {
         this.holder = holder;
-        done = new HashSet<>();
     }
 
     @Override
@@ -29,15 +27,6 @@ class ImportInspector extends JSElementVisitor
         {
             return;
         }
-
-        super.visitES6ImportDeclaration(importDeclaration);
-
-        if (done.contains(importDeclaration))
-        {
-            return;
-        }
-
-        done.add(importDeclaration);
 
         String fromClauseText = Optional
             .ofNullable(importDeclaration.getFromClause())

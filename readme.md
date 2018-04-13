@@ -19,8 +19,8 @@ Supported products
 
 Todo this version
 ------------                
-    Test the negatives.   
-    
+    Auto-enable/download typescript-library.
+        
 Roadmap
 -------
     Setup CI/build.   
