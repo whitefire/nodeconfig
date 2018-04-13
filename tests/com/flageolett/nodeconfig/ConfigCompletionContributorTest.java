@@ -11,7 +11,7 @@ import static org.hamcrest.CoreMatchers.*;
 
 public class ConfigCompletionContributorTest extends Es6Case
 {
-    private Matcher<Iterable<String>> expectedCompletions = hasItems(
+    final private Matcher<Iterable<String>> expectedCompletions = hasItems(
         "auth_key",
         "database",
         "database.host",

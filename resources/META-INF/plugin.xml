@@ -11,6 +11,7 @@
             <ul>
                 <li>Move towards best-practices.</li>
                 <li>Make plugin unobtrusive.</li>
+                <li>Autosuggest TypeScript-stub install.</li>
             </ul>
         <h2>1.0.1</h2>
         <ul>
@@ -35,5 +36,4 @@
     </extensions>
 
     <actions />
-
 </idea-plugin>

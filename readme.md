@@ -16,10 +16,6 @@ Usage
 Supported products
 ------------------
     IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland and Rider.
-
-Todo this version
-------------                
-    Auto-enable/download typescript-library.
         
 Roadmap
 -------
@@ -27,8 +23,7 @@ Roadmap
     Improve completion-ux.
         - Requesting completions after a period yields irrelevant results.    
     add completion-confidence.
-        - Auto-popup that bad-boy!
-    Auto-enable/download typescript-library.
+        - Auto-popup that bad-boy!    
     goto-implementations.
         - js seems to work for no reason.
             - json not so much.     
