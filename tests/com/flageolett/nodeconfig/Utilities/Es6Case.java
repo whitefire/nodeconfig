@@ -22,10 +22,7 @@ abstract public class Es6Case extends LightCodeInsightFixtureTestCase
     }
 
     @Override
-    protected String getTestDataPath()
-    {
-        return "/Users/henkvinn/PhpstormProjects/node-config-next/testData";
-    }
+    protected String getTestDataPath() { return "testData"; }
 
     @NotNull
     @Override

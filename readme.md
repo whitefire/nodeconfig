@@ -18,8 +18,7 @@ Supported products
     IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland and Rider.
 
 Todo this version
-------------    
-    Make test-data-path relative or infer absolute path.
+------------        
     Make sure plugin is unintrusive.
         - Should not interfere in any way unless the typescript-library is installed.    
     Test the negatives.   
