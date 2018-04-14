@@ -18,8 +18,13 @@ Supported products
 ------------------
     IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland and Rider.
         
+TODO this version
+-----------------
+    Add reference-resolving for js-files.
+         
 Roadmap
 -------
+    Show values for leaf-values.
     Setup CI/build.   
     Improve completion-ux.
         - Requesting completions after a period yields irrelevant results.    
