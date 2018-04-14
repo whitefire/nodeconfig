@@ -66,8 +66,7 @@ public class TypeScriptStubLibrary implements StartupActivity, DumbAware
         // Is the library installed?
         HAS_LIBRARY = libraryTable.getLibraryByName(libraryName) != null;
         // Is the library enabled?
-        LIBRARY_ENABLED = JSLibraryManager
-            .getInstance(project)
+        LIBRARY_ENABLED = libraryManager
             .getLibraryMappings()
             .getMappingsByLibraryName(libraryName)
             .size() > 0;

@@ -46,11 +46,9 @@ class Listener implements NotificationListener
                 .LibraryCreator
                 .downloadTypesLibrary(project, configLibrary, null, TypeScriptStubLibrary::enable);
         }
-        else if(!TypeScriptStubLibrary.LIBRARY_ENABLED)
+        else if (!TypeScriptStubLibrary.LIBRARY_ENABLED)
         {
-            ApplicationManager
-                .getApplication()
-                .runWriteAction(() -> enableLibrary(configLibrary));
+            enableLibrary(configLibrary);
         }
     }
 
