@@ -68,7 +68,6 @@ class NodeConfigProjectDescriptor extends LightProjectDescriptor
         }
         catch (ExecutionException ignored) {}
 
-        LocalFileSystem.getInstance().refresh(true);
         updateLibraries(project, description);
     }
 
@@ -83,8 +82,7 @@ class NodeConfigProjectDescriptor extends LightProjectDescriptor
                 libraryManager.commitChanges();
                 JSLibraryMappings mappings = JSLibraryMappings.getInstance(project);
                 mappings.associate(null, libraryName, false);
+                LocalFileSystem.getInstance().refresh(false);
             });
     }
-
 }
-
