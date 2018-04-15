@@ -2,9 +2,9 @@
     <id>com.flageolett.nodeconfig</id>
     <name>NodeConfig</name>
     <version>2.0.0</version>
-    <vendor email="henning.kvinnesland@gmail.com" url="https://github.com/whitefire/nodeconfig">Flageolett</vendor>
+    <vendor email="henning.kvinnesland@gmail.com" url="https://github.com/annitya/nodeconfig">Flageolett</vendor>
 
-    <description><![CDATA[Adds Support for code-completion and goto for js/json config-files.]]></description>
+    <description><![CDATA[Adds Support for code-completion and goto for config-files.]]></description>
 
     <change-notes><![CDATA[
         <h2>2.0.0</h2>
@@ -22,7 +22,7 @@
             <li>Change must come from within.</li>
         </ul>
         ]]>
-  </change-notes>
+    </change-notes>
 
     <idea-version since-build="173.0"/>
     <depends>com.intellij.modules.lang</depends>
@@ -30,10 +30,11 @@
     <depends>com.intellij.css</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <postStartupActivity implementation="com.flageolett.nodeconfig.Utilities.TypeScriptStubLibrary" />
-        <completion.contributor implementationClass="com.flageolett.nodeconfig.ConfigCompletionContributor" language="JavaScript" order="first" />
-        <inspectionToolProvider implementation="com.flageolett.nodeconfig.Inspections.ConfigInspectionProvider" />
+        <postStartupActivity implementation="com.flageolett.nodeconfig.Utilities.TypeScriptStubLibrary"/>
+        <completion.contributor implementationClass="com.flageolett.nodeconfig.ConfigCompletionContributor"
+                                language="JavaScript" order="first"/>
+        <inspectionToolProvider implementation="com.flageolett.nodeconfig.Inspections.ConfigInspectionProvider"/>
     </extensions>
 
-    <actions />
+    <actions/>
 </idea-plugin>

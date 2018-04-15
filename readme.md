@@ -9,10 +9,9 @@ Installation
 Usage
 -----
     Enable the @types/config TypeScript library when asked.
-        - If this fail for some reason, make sure you have a working version of NodeJS installed.
-    Request completions within string literals when using the "get" or "has"
-    methods of the config-object.
-    If you wish the regular-completions, request completions an additional time to get access to them.
+        - If this fails for some reason, make sure you have a working version of NodeJS installed.
+    Request completions within string literals when using the "get" or "has" methods of the config-object.
+    For regular completions, request completions an additional time to get access to them.
 
 Supported products
 ------------------
