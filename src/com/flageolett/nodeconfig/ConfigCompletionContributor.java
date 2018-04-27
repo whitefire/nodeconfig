@@ -34,6 +34,7 @@ public class ConfigCompletionContributor extends CompletionContributor
             .map(JSCallExpression::getMethodExpression)
             .map(PsiElement::getReference)
             .map(PsiReference::resolve)
+            .filter(psiElement -> psiElement instanceof TypeScriptFunctionSignature)
             .map(TypeScriptFunctionSignature.class::cast)
             .map(NavigationItem::getName)
             .orElse("");
