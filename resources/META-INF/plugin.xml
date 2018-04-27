@@ -7,12 +7,17 @@
     <description><![CDATA[Adds Support for code-completion and goto for config-files.]]></description>
 
     <change-notes><![CDATA[
+        <h2>2.0.1</h2>
+        <ul>
+            <li>Fix casting-errors.</li>
+        </ul>
+
         <h2>2.0.0</h2>
-            <ul>
-                <li>Move towards best-practices.</li>
-                <li>Make plugin unobtrusive.</li>
-                <li>Autosuggest TypeScript-stub install.</li>
-            </ul>
+        <ul>
+            <li>Move towards best-practices.</li>
+            <li>Make plugin unobtrusive.</li>
+            <li>Autosuggest TypeScript-stub install.</li>
+        </ul>
         <h2>1.0.1</h2>
         <ul>
             <li>Fixed duplicate js-completions when using multiple environments.</li>

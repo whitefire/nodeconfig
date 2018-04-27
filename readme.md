@@ -16,6 +16,13 @@ Usage
 Supported products
 ------------------
     IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland and Rider.
+       
+Next version
+------------
+    Add reference-resolving for js/json-files.
+    Add goto-support for json-config.
+    Merge 2.0 into master.
+    Add support for chained get-statements.       
         
 TODO this version
 -----------------
@@ -28,12 +35,14 @@ Roadmap
     Improve completion-ux.
         - Requesting completions after a period yields irrelevant results.    
     add completion-confidence.
-        - Auto-popup that bad-boy!    
+        - Auto-popup that bad-boy!
+            - When the user types a ".", obviously.    
     goto-implementations.
         - js seems to work for no reason.
             - json not so much.     
     Missing setting-inspection.
-        - Add setting quickfix.       
+        - Add setting quickfix.
+             - Might the reference-resolving also provide the inspection?       
     Add support for find usages/rename refactoring.
     Add replacement-quickfix for imported properties.
        
