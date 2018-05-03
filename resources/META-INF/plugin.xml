@@ -1,12 +1,23 @@
 <idea-plugin>
     <id>com.flageolett.nodeconfig</id>
     <name>NodeConfig</name>
-    <version>1.0.1</version>
-    <vendor email="henning.kvinnesland@gmail.com" url="https://github.com/whitefire/nodeconfig">Flageolett</vendor>
+    <version>2.0.0</version>
+    <vendor email="henning.kvinnesland@gmail.com" url="https://github.com/annitya/nodeconfig">Flageolett</vendor>
 
-    <description><![CDATA[Adds Support for code-completion and goto for js/json config-files.]]></description>
+    <description><![CDATA[Adds Support for code-completion and goto for config-files.]]></description>
 
     <change-notes><![CDATA[
+        <h2>2.0.1</h2>
+        <ul>
+            <li>Fix casting-errors.</li>
+        </ul>
+
+        <h2>2.0.0</h2>
+        <ul>
+            <li>Move towards best-practices.</li>
+            <li>Make plugin unobtrusive.</li>
+            <li>Autosuggest TypeScript-stub install.</li>
+        </ul>
         <h2>1.0.1</h2>
         <ul>
             <li>Fixed duplicate js-completions when using multiple environments.</li>
@@ -16,7 +27,7 @@
             <li>Change must come from within.</li>
         </ul>
         ]]>
-  </change-notes>
+    </change-notes>
 
     <idea-version since-build="173.0"/>
     <depends>com.intellij.modules.lang</depends>
@@ -24,19 +35,11 @@
     <depends>com.intellij.css</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <psi.referenceContributor language="JavaScript" implementation="Json.ConfigAttributeReferenceProvider" order="first"/>
-
-        <completion.contributor language="JavaScript" implementationClass="Json.ImportCompletionContributor" order="first"/>
-        <completion.contributor language="JavaScript" implementationClass="Js.ImportCompletionContributor" order="first"/>
-
-        <gotoDeclarationHandler implementation="Js.GotoConfigFile" order="first"/>
-        <gotoDeclarationHandler implementation="Json.GotoConfigProperty" order="first"/>
-    </extensions>
-
-    <extensions defaultExtensionNs="JavaScript">
-        <moduleReferenceContributor implementation="Js.ConfigModuleReferenceContributor" order="first"/>
+        <postStartupActivity implementation="com.flageolett.nodeconfig.Utilities.TypeScriptStubLibrary"/>
+        <completion.contributor implementationClass="com.flageolett.nodeconfig.ConfigCompletionContributor"
+                                language="JavaScript" order="first"/>
+        <inspectionToolProvider implementation="com.flageolett.nodeconfig.Inspections.ConfigInspectionProvider"/>
     </extensions>
 
     <actions/>
-
 </idea-plugin>

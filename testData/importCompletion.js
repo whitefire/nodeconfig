@@ -1,1 +1,0 @@
-import { <caret> } from 'config';
