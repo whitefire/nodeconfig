@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 
 class BestPractice extends JSInspection
 {
-
     @NotNull
     @Override
     protected PsiElementVisitor createVisitor(@NotNull ProblemsHolder problemsHolder, @NotNull LocalInspectionToolSession localInspectionToolSession)

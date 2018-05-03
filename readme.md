@@ -17,21 +17,19 @@ Supported products
 ------------------
     IntelliJ IDEA, PhpStorm, WebStorm, PyCharm, RubyMine, AppCode, CLion, Gogland and Rider.
        
-Next version
-------------
-    Add reference-resolving for js/json-files.
-    Add goto-support for json-config.
-    Merge 2.0 into master.
-    Add support for chained get-statements.       
-        
 TODO this version
 -----------------
-    Add reference-resolving for js-files.
+    Setup CI/build.
+
+    Add goto-support for json-config.    
+    Add reference-resolving/completion for js/json-files.
+    Prefix log-message with project.
+    Merge 2.0 into master.
+    Add support for chained get-statements.       
          
 Roadmap
 -------
-    Show values for leaf-values.
-    Setup CI/build.   
+    Show values for leaf-values.       
     Improve completion-ux.
         - Requesting completions after a period yields irrelevant results.    
     add completion-confidence.
