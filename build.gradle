@@ -1,5 +1,3 @@
-import org.gradle.api.tasks.testing.logging.TestLogEvent
-
 buildscript {
     repositories {
         mavenCentral()
@@ -7,77 +5,56 @@ buildscript {
 }
 
 plugins {
-    id "org.jetbrains.intellij" version "0.3.0"
+    id "org.jetbrains.intellij" version "0.3.1"
 }
 
-version = "2.0.1"
+task wrapper(type: Wrapper) {
+    gradleVersion = "4.7"
+}
 
-allprojects {
-    apply plugin: "idea"
-    apply plugin: "java"
-    sourceCompatibility = "1.8"
-    targetCompatibility = "1.8"
-    tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
+apply plugin: "idea"
+apply plugin: "org.jetbrains.intellij"
+apply plugin: "java"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+tasks.withType(JavaCompile) { options.encoding = "UTF-8" }
 
-    apply plugin: "org.jetbrains.intellij"
-    intellij {
-        version "IU-181.4668.68"
-        pluginName "NodeConfig"
+intellij {
+    version "IU-181.4668.68"
+    pluginName "NodeConfig"
 
-        //plugin dependencies, see https://github.com/JetBrains/gradle-intellij-plugin
-        //plugins 'IntelliLang'
-    }
+    plugins = ['JavaScriptLanguage', 'CSS']
 
-    // code coverage using the Jacoco engine, see https://docs.gradle.org/current/userguide/jacoco_plugin.html
-    // the coverage reports will be available at build/reports/coverage/test/html/index.html
-    apply plugin: "jacoco"
-    jacoco {
-        toolVersion = "0.7.9"
-        reportsDir = file("$buildDir/reports/coverage")
-    }
-    test {
-        finalizedBy jacocoTestReport
-        jacoco {
-            enabled true
-            includes ["com.*"]
-        }
-    }
-
-    // test logging configuration, shows test progress and messages to standard error
-    // see https://docs.gradle.org/current/javadoc/org/gradle/api/tasks/testing/logging/TestLogEvent.html
-    test {
-        testLogging {
-            events = [
-                TestLogEvent.FAILED,
-                TestLogEvent.PASSED,
-                TestLogEvent.SKIPPED,
-                TestLogEvent.STANDARD_ERROR
-            ]
-        }
-    }
 }
 
 sourceSets {
     main {
-        java {
-            srcDir "src"
-        }
-        resources {
-            srcDir "resources"
-        }
+        java.srcDirs = ['src']
+        resources.srcDirs = ['resources']
     }
-    integrationTest {
-        java {
-            srcDir "tests"
-        }
-        resources {
-            srcDir "testData"
-        }
-        compileClasspath += main.output + test.output
-        runtimeClasspath += main.output + test.output
+    test {
+        java.srcDirs = ['tests']
+        resources.srcDirs = ['testData']
     }
 }
 
-task wrapper(type: Wrapper) {
-    gradleVersion = "3.4"
+test {
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        exceptionFormat = 'full'
+    }
+
+    beforeSuite { suite ->
+        if (suite.className != null) {
+            println()
+            println(suite.className)
+        }
+    }
+    afterTest { desc, result ->
+        System.out.flush()
+    }
+    afterSuite { println() }
 }
+
+group 'org.jetbrains'
+version '2.0.1'
