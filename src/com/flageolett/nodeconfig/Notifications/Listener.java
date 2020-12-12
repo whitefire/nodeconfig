@@ -29,7 +29,7 @@ class Listener implements NotificationListener
     {
         // The user clicked something... hide the balloon.
         notification.hideBalloon();
-        Boolean enable = event.getDescription().equals("1");
+        boolean enable = event.getDescription().equals("1");
 
         if (!enable)
         {

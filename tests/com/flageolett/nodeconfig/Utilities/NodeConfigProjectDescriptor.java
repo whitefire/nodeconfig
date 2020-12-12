@@ -3,9 +3,10 @@ package com.flageolett.nodeconfig.Utilities;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.configurations.GeneralCommandLine;
 import com.intellij.execution.process.CapturingProcessHandler;
-import com.intellij.javascript.nodejs.NodeCommandLineUtil;
 import com.intellij.javascript.nodejs.interpreter.local.NodeJsLocalInterpreter;
 import com.intellij.javascript.nodejs.interpreter.local.NodeJsLocalInterpreterManager;
+import com.intellij.javascript.nodejs.npm.NpmUtil;
+import com.intellij.lang.javascript.buildTools.npm.rc.NpmCommand;
 import com.intellij.lang.javascript.library.JSLibraryManager;
 import com.intellij.lang.javascript.library.JSLibraryMappings;
 import com.intellij.lang.javascript.library.download.TypeScriptAllStubsFile;
@@ -56,12 +57,12 @@ class NodeConfigProjectDescriptor extends LightProjectDescriptor
             return;
         }
 
-        List<String> args = ContainerUtil.newArrayList(NodeCommandLineUtil.getInstallPackageCommand(interpreter), TypeScriptStubLibrary.getNameForLibrary(description));
+        List<String> args = ContainerUtil.newArrayList(TypeScriptStubLibrary.getNameForLibrary(description));
         Collections.addAll(args, "--ignore-scripts".split(" +"));
 
         try
         {
-            GeneralCommandLine commandLine = NodeCommandLineUtil.createNpmCommandLine(nodeModulesDir, interpreter, args);
+            GeneralCommandLine commandLine = NpmUtil.createNpmCommandLine(project, nodeModulesDir, interpreter, NpmCommand.INSTALL, args);
             CapturingProcessHandler processHandler = new CapturingProcessHandler(commandLine);
             processHandler.runProcess();
 

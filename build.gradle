@@ -21,7 +21,7 @@ intellij {
     version "IU-203.5981.155"
     pluginName "NodeConfig"
 
-    plugins = ['JavaScriptLanguage', 'CSS']
+    plugins = ['JavaScriptLanguage', 'CSS', 'com.intellij.java']
 }
 
 sourceSets {
@@ -37,15 +37,11 @@ sourceSets {
 
 test {
     testLogging {
-        events 'passed', 'skipped', 'failed'
         exceptionFormat = 'full'
     }
 
     beforeSuite { suite ->
-        if (suite.className != null) {
-            println()
-            println(suite.className)
-        }
+
     }
     afterTest { desc, result ->
         System.out.flush()

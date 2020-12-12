@@ -23,6 +23,9 @@ public class ConfigCompletionContributorTest extends Es6Case
 
     public void testJsCompletion()
     {
+        // @todo: TypeScript library is not installed for the test-run which causes the tests to fail.
+        // @todo: What about plugin-compatability? Is it Java only now that it's a dependency?
+
         myFixture.configureByFiles("configCompletions.js", "config/default.js");
         myFixture.completeBasic();
         verifyCompletions();
