@@ -8,10 +8,14 @@ public class Library
 {
     public static void send(Project project)
     {
-        NotificationGroup group = new NotificationGroup(
+        NotificationGroup group = NotificationGroup.create(
             "NodeConfig",
             NotificationDisplayType.BALLOON,
-            true
+            true,
+            null,
+                null,
+                null,
+                null
         );
 
         String spaces = StringUtils.repeat("&nbsp;", 16);
